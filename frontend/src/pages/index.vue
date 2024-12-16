@@ -1,7 +1,7 @@
 <template>
-  <HelloWorld />
+  <UserCrud />
 </template>
 
 <script setup>
-  //
+//
 </script>
