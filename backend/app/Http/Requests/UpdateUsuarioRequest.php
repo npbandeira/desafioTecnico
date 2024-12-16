@@ -28,4 +28,25 @@ class UpdateUsuarioRequest extends FormRequest
             'password' => 'required|string|min:8'
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'O campo nome é obrigatório.',
+            'name.string' => 'O nome deve ser uma string válida.',
+            'name.max' => 'O nome não pode ter mais de 255 caracteres.',
+
+            'email.required' => 'O campo e-mail é obrigatório.',
+            'email.email' => 'O e-mail informado não é válido.',
+            'email.unique' => 'Já existe um usuário registrado com este e-mail.',
+
+            'cpf.required' => 'O campo CPF é obrigatório.',
+            'cpf.unique' => 'Já existe um usuário registrado com este CPF.',
+            'cpf.regex' => 'O CPF informado é inválido. Utilize o formato: 123.456.789-00.',
+
+            'password.required' => 'O campo senha é obrigatório.',
+            'password.string' => 'A senha deve ser uma string válida.',
+            'password.min' => 'A senha deve ter pelo menos 8 caracteres.',
+        ];
+    }
 }
